@@ -1,42 +1,42 @@
-<footer class="night-panel mt-24 text-ivory">
-    <div class="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-12 lg:px-8 lg:py-20">
-        <div class="lg:col-span-5">
-            <img src="{{ asset('brand/logo-secondary-light.png') }}" alt="Beauty Pantry" class="h-20 w-auto sm:h-24">
-            <p class="mt-6 max-w-sm text-sm leading-7 text-ivory/70">A cosmetics house for people who prefer their beauty quiet, botanical, and precisely edited.</p>
+<footer class="night-panel mt-16 text-ivory sm:mt-24">
+    <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:gap-12 sm:px-6 sm:py-16 lg:grid-cols-12 lg:px-8 lg:py-20">
+        <div class="lg:col-span-5" data-reveal>
+            <img src="{{ asset('brand/logo-secondary-light.png') }}" alt="Beauty Pantry" class="h-16 w-auto sm:h-20 lg:h-24">
+            <p class="mt-5 max-w-sm text-sm leading-7 text-ivory/70 sm:mt-6">{{ __('store.footer.blurb') }}</p>
         </div>
         <div class="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:col-span-7">
-            <div>
-                <p class="eyebrow text-mint">Explore</p>
+            <div data-reveal style="--reveal-delay: 80ms">
+                <p class="eyebrow text-mint">{{ __('store.footer.explore') }}</p>
                 <ul class="mt-4 space-y-2 text-sm text-ivory/75">
-                    <li><a href="{{ route('shop') }}" class="hover:text-ivory">The edit</a></li>
-                    <li><a href="{{ route('shop', ['category' => 'skincare']) }}" class="hover:text-ivory">Skincare</a></li>
-                    <li><a href="{{ route('shop', ['category' => 'fragrance']) }}" class="hover:text-ivory">Fragrance</a></li>
-                    <li><a href="{{ route('shop', ['category' => 'gifts']) }}" class="hover:text-ivory">Gifts</a></li>
+                    <li><a href="{{ route('shop') }}" class="footer-link hover:text-ivory">{{ __('store.footer.the_edit') }}</a></li>
+                    <li><a href="{{ route('shop', ['category' => 'skincare']) }}" class="footer-link hover:text-ivory">{{ __('store.categories.skincare.name') }}</a></li>
+                    <li><a href="{{ route('shop', ['category' => 'fragrance']) }}" class="footer-link hover:text-ivory">{{ __('store.categories.fragrance.name') }}</a></li>
+                    <li><a href="{{ route('shop', ['category' => 'gifts']) }}" class="footer-link hover:text-ivory">{{ __('store.categories.gifts.name') }}</a></li>
                 </ul>
             </div>
-            <div>
-                <p class="eyebrow text-mint">Atelier</p>
+            <div data-reveal style="--reveal-delay: 140ms">
+                <p class="eyebrow text-mint">{{ __('store.footer.atelier') }}</p>
                 <ul class="mt-4 space-y-2 text-sm text-ivory/75">
-                    <li><a href="{{ route('about') }}" class="hover:text-ivory">Our story</a></li>
-                    <li><a href="{{ route('contact') }}" class="hover:text-ivory">Write to us</a></li>
-                    <li><a href="{{ route('account') }}" class="hover:text-ivory">Orders</a></li>
-                    <li><a href="{{ route('login') }}" class="hover:text-ivory">Account</a></li>
+                    <li><a href="{{ route('about') }}" class="footer-link hover:text-ivory">{{ __('store.footer.our_story') }}</a></li>
+                    <li><a href="{{ route('contact') }}" class="footer-link hover:text-ivory">{{ __('store.footer.write') }}</a></li>
+                    <li><a href="{{ route('account') }}" class="footer-link hover:text-ivory">{{ __('store.footer.orders') }}</a></li>
+                    <li><a href="{{ route('login') }}" class="footer-link hover:text-ivory">{{ __('store.footer.account') }}</a></li>
                 </ul>
             </div>
-            <div class="col-span-2 sm:col-span-1">
-                <p class="eyebrow text-mint">Care</p>
+            <div class="col-span-2 sm:col-span-1" data-reveal style="--reveal-delay: 200ms">
+                <p class="eyebrow text-mint">{{ __('store.footer.care') }}</p>
                 <ul class="mt-4 space-y-2 text-sm text-ivory/75">
-                    <li>Yangon delivery from Ks 150,000</li>
-                    <li>Otherwise Ks 5,000</li>
-                    <li>hello@beautypantry.com</li>
+                    <li>{{ __('store.footer.delivery') }}</li>
+                    <li>{{ __('store.footer.fee') }}</li>
+                    <li class="break-all">hello@beautypantry.com</li>
                 </ul>
             </div>
         </div>
     </div>
     <div class="border-t border-white/10">
-        <div class="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-6 text-xs tracking-[0.16em] text-ivory/50 uppercase sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+        <div class="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-5 text-center text-[0.65rem] tracking-[0.12em] text-ivory/50 uppercase sm:flex-row sm:items-center sm:justify-between sm:px-6 sm:py-6 sm:text-left sm:text-xs sm:tracking-[0.16em] lg:px-8">
             <p>© {{ date('Y') }} Beauty Pantry</p>
-            <p>Mint {{ '#55CF90' }} · Charcoal {{ '#484B4A' }}</p>
+            <p class="hidden sm:block">Mint {{ '#55CF90' }} · Charcoal {{ '#484B4A' }}</p>
         </div>
     </div>
 </footer>

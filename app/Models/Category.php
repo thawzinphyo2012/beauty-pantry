@@ -18,4 +18,15 @@ class Category extends Model
     {
         return 'slug';
     }
+
+    public function getImageUrlAttribute(): string
+    {
+        $path = 'images/categories/'.$this->slug.'.jpg';
+
+        if (is_file(public_path($path))) {
+            return asset($path);
+        }
+
+        return asset('images/editorial/hero.jpg');
+    }
 }

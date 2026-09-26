@@ -3,27 +3,29 @@
 @section('title', 'Account — Beauty Pantry')
 
 @section('content')
-    <section class="mx-auto max-w-4xl px-4 pb-20 pt-10 sm:px-6">
-        <div class="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+    <section class="section-screen mx-auto max-w-4xl px-4 pb-20 pt-10 sm:px-6">
+        <div class="flex flex-col justify-between gap-4 is-visible sm:flex-row sm:items-end" data-reveal>
             <div>
-                <p class="eyebrow text-mint-deep">Account</p>
-                <h1 class="mt-3 font-display text-6xl leading-none">{{ auth()->user()->name }}</h1>
-                <p class="mt-2 text-charcoal">{{ auth()->user()->email }}</p>
+                <p class="anim-rise eyebrow text-mint-deep" style="--rise-delay: 40ms">Account</p>
+                <h1 class="page-title text-3d mt-3 font-display leading-none" data-text-3d style="--text-delay: 80ms">{{ auth()->user()->name }}</h1>
+                <p class="anim-rise mt-2 text-charcoal" style="--rise-delay: 360ms">{{ auth()->user()->email }}</p>
             </div>
             <form action="{{ route('logout') }}" method="POST">
                 @csrf
-                <button class="btn btn-ghost">Sign out</button>
+                <button class="btn btn-ghost btn-shine">Sign out</button>
             </form>
         </div>
 
-        <h2 class="mt-12 font-display text-4xl">Orders</h2>
+        <h2 class="text-3d mt-12 font-display text-4xl" data-reveal data-text-3d style="--text-delay: 60ms">Orders</h2>
         @if ($orders->isEmpty())
-            <p class="mt-4 text-charcoal">No orders yet. The edit is waiting.</p>
-            <a href="{{ route('shop') }}" class="btn btn-ink mt-6">Shop</a>
+            <div class="panel panel-glow mt-6 px-6 py-12 text-center" data-reveal style="--reveal-delay: 80ms">
+                <p class="text-charcoal">No orders yet. The edit is waiting.</p>
+                <a href="{{ route('shop') }}" class="btn btn-ink btn-shine mt-6">Shop</a>
+            </div>
         @else
-            <div class="mt-6 space-y-4">
+            <div class="mt-6 space-y-4" data-spotlight>
                 @foreach ($orders as $order)
-                    <a href="{{ route('orders.success', $order) }}" class="block rounded-[1.4rem] border border-line bg-paper p-5 transition hover:border-ink">
+                    <a href="{{ route('orders.success', $order) }}" class="panel panel-glow block p-5 transition hover:-translate-y-1 hover:border-ink" data-reveal style="--reveal-delay: {{ $loop->index * 70 }}ms">
                         <div class="flex flex-col justify-between gap-2 sm:flex-row sm:items-center">
                             <div>
                                 <p class="eyebrow text-charcoal">{{ $order->number }}</p>
